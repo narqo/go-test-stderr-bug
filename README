@@ -1,0 +1,33 @@
+go-test Stderr redirection bug
+
+~~~
+
+$ go test -v ./pkg1/...
+=== RUN   TestPkg1
+pkg1 blah
+--- PASS: TestPkg1 (0.00s)
+PASS
+ok  	github.com/narqo/example-go-test/pkg1	0.011s
+
+~~~
+
+go test -v ./pkg1/... 2>/dev/null                                                                                                                                                                    ≡
+=== RUN   TestPkg1
+--- PASS: TestPkg1 (0.00s)
+PASS
+ok  	github.com/narqo/example-go-test/pkg1	0.009s
+
+~~~
+
+$ go test -v ./pkg1/... ./pkg2/... 2>/dev/null
+
+=== RUN   TestPkg1
+pkg1 blah
+--- PASS: TestPkg1 (0.00s)
+PASS
+ok  	github.com/narqo/example-go-test/pkg1	0.010s
+=== RUN   TestPkg2
+pkg2 blah--- PASS: TestPkg2 (0.00s)
+PASS
+ok  	github.com/narqo/example-go-test/pkg2	0.007s
+
