@@ -11,7 +11,7 @@ ok  	github.com/narqo/example-go-test/pkg1	0.011s
 
 ~~~
 
-go test -v ./pkg1/... 2>/dev/null                                                                                                                                                                    ≡
+go test -v ./pkg1/... 2>/dev/null
 === RUN   TestPkg1
 --- PASS: TestPkg1 (0.00s)
 PASS
