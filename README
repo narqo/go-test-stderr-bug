@@ -2,6 +2,10 @@ go-test Stderr redirection bug
 
 ~~~
 
+It's turned out this is not a bug. See https://github.com/golang/go/blob/master/src/cmd/go/internal/test/test.go#L452-L460
+
+~~~
+
 $ go test -v ./pkg1/...
 === RUN   TestPkg1
 pkg1 blah
